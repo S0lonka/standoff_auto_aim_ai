@@ -1,0 +1,11 @@
+path  : /data_set
+train : images/train
+val   : images/val
+
+# Классы
+names:
+  0 : ct
+  1 : ct_h
+  2 : tr
+  3 : tr_h
+
