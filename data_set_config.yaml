@@ -1,6 +1,8 @@
 path  : /data_set
-train : images/train
-val   : images/val
+
+train : train/images
+valid   : valid/images
+test  : test/images
 
 # Классы
 names:
