@@ -8,3 +8,5 @@ data_set/
 runs/
 
 yolo11n.pt
+
+__pycache__
