@@ -4,7 +4,7 @@ import os
 
 folder = "enemy_screenshots"
 counter_file = "do_screen\\counter.txt"
-interval = 6  # в секундах
+interval = 4  # в секундах
 
 # Читаем счётчик из файла
 if os.path.exists(counter_file):

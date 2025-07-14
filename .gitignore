@@ -4,3 +4,7 @@ test/
 
 enemy_screenshots/
 data_set/
+
+runs/
+
+yolo11n.pt
