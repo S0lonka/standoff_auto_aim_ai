@@ -6,6 +6,6 @@ yolo detect train `
    data="AI\data_set\data.yaml" `
    epochs=400 `
    imgsz=640 `
-   batch=16 `
+   batch=8 `
    device="cuda" # Видео карта
 ```

@@ -7,7 +7,7 @@ def model_check(photo_path: str, model_path: str ="runs/detect/train/weights/bes
 
     Args:
         photo_path (str): Путь к изображению для тестирования модели.
-        model_path (str): Путь к файлу модели (по умолчанию "runs/detect/train/weights/best.pt").
+        model_path (str): Путь к файлу модели.                          По умолчанию "runs/detect/train/weights/best.pt".
 
     Returns:
         None - Отображает фото с результатом.
