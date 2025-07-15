@@ -4,17 +4,36 @@ from app.config.config import *
 
 # ! ЗАПУСКАТЬ ЧЕРЕЗ КОНСОЛЬ - Python НЕ ВИДИТ Видео карту
 
-def train_model() -> None:
-    model = YOLO(YOLO_MODEL_PATH).to("cuda")
+def train_model(data: str = "AI/data_set/data.yaml",
+                epochs: int = 400,
+                batch: int = 8,
+                device: str = "cuda",
+                model_path: str = YOLO_MODEL_PATH
+                ) -> None:
+    '''Обучает YOLO-модель на указанных данных.
 
-    results = model.train(
-        data = "data_set_config.yaml",
-        epochs=400,
+    Args:
+        - data       (str, optional): Путь к YAML-файлу с конфигурацией данных.     По умолчанию: "AI/data_set/data.yaml".
+        - epochs     (int, optional): Количество эпох обучения.                     По умолчанию: 400.
+        - batch      (int, optional): Размер пакета (batch size).                   По умолчанию: 8.
+        - device     (str, optional): Устройство для обучения ("cuda" или "cpu").   По умолчанию: "cuda".
+        - model_path (str, optional): Путь к файлу модели (.pt).                    По умолчанию: YOLO_MODEL_PATH (глобальная константа).
+
+    Returns:
+        None: Функция не возвращает значений, но сохраняет обученную модель на диск.
+
+    Examples:
+        >>> train_model()                      # Обучение с параметрами по умолчанию
+        >>> train_model(batch=16, epochs=100)  # Кастомные параметры
+    '''
+    
+    model = YOLO(model_path).to("cuda")
+
+    model.train(
+        data = data,
+        epochs=epochs,
+        batch=batch,        # Уменьшить, если не хватает памяти GPU
+        device=device,
         imgsz=640,
-        batch=16,        # Можно уменьшить, если не хватает памяти GPU
-        device="cuda",
-        # name=f"{yolo_model}_train"
     )
 
-    results = model.predict("data_set\\test\\images\\enemy_148_png.rf.6e716582bc98c8e4056deadf89a4c79f.jpg", conf=0.5)
-    results[0].show()  # Показать результат
