@@ -2,9 +2,9 @@ import pyautogui
 import time
 import os
 
-folder = "app\\utils\\do_screen\\enemy_screenshots"
-counter_file = "app\\utils\\do_screen\\counter.txt"
-interval = 4  # в секундах
+folder = "app\\utils\\general\\do_screen\\enemy_screenshots"
+counter_file = "app\\utils\\general\\do_screen\\counter.txt"
+interval = 6  # в секундах
 
 # Читаем счётчик из файла
 if os.path.exists(counter_file):
