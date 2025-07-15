@@ -1,1 +1,0 @@
-yolo_model = "yolo11m.pt"

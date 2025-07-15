@@ -2,8 +2,8 @@ import pyautogui
 import time
 import os
 
-folder = "enemy_screenshots"
-counter_file = "do_screen\\counter.txt"
+folder = "app\\utils\\do_screen\\enemy_screenshots"
+counter_file = "app\\utils\\do_screen\\counter.txt"
 interval = 4  # в секундах
 
 # Читаем счётчик из файла

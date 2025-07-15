@@ -9,4 +9,10 @@ runs/
 
 yolo11n.pt
 
-__pycache__
+__pycache__/
+
+fast_start_window.py
+fast_st.py
+fast.py
+
+test.py
