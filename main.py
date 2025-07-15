@@ -1,3 +1,5 @@
-from app.utils.model_train import train_model
+from app.utils.model.model_train import train_model
 
-train_model()
+
+if __name__ == "__main__":
+    train_model()
