@@ -2,8 +2,8 @@ import cv2
 import time
 
 # Желаемые размеры (ширина, высота)
-TARGET_WIDTH = 1980
-TARGET_HEIGHT = 1024
+TARGET_WIDTH = 1920
+TARGET_HEIGHT = 1080
 
 
 cap = cv2.VideoCapture(1)  # Виртуальная камера OBS
