@@ -1,10 +1,12 @@
 import cv2
+import numpy
 
-def display_fps(frame, fps: int):
+
+def display_fps(frame: numpy.ndarray, fps: int):
     '''Функция отрисовки FPS в новом окне
     Args:
-        frame       : Изображение на котором отобразить Fps.
-        fps   (int) : Число fps
+        frame (ndarray) : Изображение на котором отобразить Fps.
+        fps   (int)     : Число fps
     '''
     cv2.putText(
         frame,                       # Изображение(куда)
