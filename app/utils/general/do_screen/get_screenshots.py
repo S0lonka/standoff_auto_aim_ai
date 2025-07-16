@@ -1,10 +1,11 @@
 import pyautogui
 import time
 import os
+import keyboard
 
 folder = "app\\utils\\general\\do_screen\\enemy_screenshots"
 counter_file = "app\\utils\\general\\do_screen\\counter.txt"
-interval = 6  # в секундах
+interval = 4  # в секундах
 
 # Читаем счётчик из файла
 if os.path.exists(counter_file):
@@ -35,6 +36,7 @@ try:
 
         counter += 1
         time.sleep(interval)
+
 
 except KeyboardInterrupt:
     # Увеличиваем счётчик на 1 перед выходом
