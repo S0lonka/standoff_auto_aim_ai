@@ -3,14 +3,17 @@ import queue
 from ultralytics import YOLO
 import cv2
 import time
+import asyncio
 
 from app.config.config import *
 from app.config.game_config import *
 
 from app.utils.game_funcs.fps import display_fps
+from app.utils.game_funcs.aim import auto_aim
 from app.utils.game_funcs.camera_buffer import CameraBuffer
 
-def main(model):
+
+async def main(model):
     cam = CameraBuffer()
     prev_time = 0
 
@@ -36,6 +39,8 @@ def main(model):
 
             display_fps(annotated_frame, int(fps))
 
+            auto_aim(results, model, annotated_frame)
+
             cv2.imshow("Yolo + OBS", annotated_frame)
             if cv2.waitKey(1) == ord('q'):
                 break
@@ -46,4 +51,4 @@ def main(model):
 
 if __name__ == "__main__":
     model = YOLO(r"runs\detect\train\weights\best.pt")
-    main(model)
+    asyncio.run(main(model))
