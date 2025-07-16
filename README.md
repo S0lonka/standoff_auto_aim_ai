@@ -21,6 +21,9 @@ results = model(frame,
    verbose=False    # verbose=False отключает лишний вывод
    )
 
+
+- Обязательно установить torch под видео карту
+
 # План
 - Идея
 - Обучение модели

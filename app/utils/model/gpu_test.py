@@ -5,3 +5,6 @@ def gpu_test() -> bool:
         Bool: если pytorch может использовать видео карту
     '''
     return torch.cuda.is_available()
+
+if __name__ == "__main__":
+    print(gpu_test())
