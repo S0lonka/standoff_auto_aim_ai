@@ -1,11 +1,12 @@
 from ultralytics import YOLO
 
 import cv2
+import time
 
 from app.config.config import *
 from app.config.game_config import *
 
-from app.utils.model.model_train import train_model, resume_train_model
+from app.utils.game_funcs.fps import display_fps
 
 
 def main(model) -> None:
@@ -37,6 +38,19 @@ def main(model) -> None:
             conf=CONFIDENCE_THRESHOLD,  # Порог уверенности (меньше = быстрее, но менее точно)
             verbose=False               # verbose=False отключает лишний вывод
         )
+
+        annotated_frame = results[0].plot()  # Кадр с нарисованными Боксами
+
+
+        #----------Расчитываем FPS----------
+        current_time = time.time()
+        fps = 1 / (current_time - prev_time) if (current_time - prev_time) != 0 else 0
+        prev_time = current_time
+
+
+        #----------Отображаем FPS-----------
+        display_fps(annotated_frame, int(fps))
+
 
 
 
